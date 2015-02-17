@@ -181,16 +181,20 @@ class RabbitViewController: UIViewController, UIScrollViewDelegate, UIGestureRec
             self.AnswerLabel.alpha = 1
             self.ActivityIndicatorView.hidden = true
             self.ActivityIndicatorView.stopAnimating()
+            println("Question: \(self.QuestionField)")
             if (self.QuestionField.text == "What is your name?") {
-                self.AnswerLabel.text = "There are some who call me 'RabbitView'"
+                self.AnswerLabel.text = "There are some who call me RabbitView"
+                self.QuestionField.text = ""
             } else if (self.QuestionField.text == "Will you be my friend?") {
                 self.AnswerLabel.text = "Let me consult the Magic 8 Ball"
+                self.QuestionField.text = ""
             } else {
                 self.AnswerLabel.text = "¿No Comprende?"
+                self.QuestionField.text = ""
             }
             self.AskButton.enabled = false
         })
-        QuestionField.text = ""
+        
     }
 
     // MARK: - Logout
